@@ -1,0 +1,896 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #241719;
+    color: #f1e8dc;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(30, 17, 19, 0.85);
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(201, 167, 125, 0.15);
+}
+
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #f1e8dc;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #c9a77d;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 100vh;
+    min-height: 700px;
+
+    position: relative;
+
+    background-image: url("img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 12, 14, 0.92),
+            rgba(45, 22, 24, 0.55),
+            rgba(25, 12, 14, 0.2)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    margin-left: 8%;
+    max-width: 900px;
+}
+
+.mini-title {
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #d4b58e;
+}
+
+.hero h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(100px, 18vw, 260px);
+    line-height: 0.75;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px #f1e8dc;
+}
+
+.hero-subtitle {
+    margin-top: 35px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e3d2bf;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 25px;
+
+    border: 1px solid #c9a77d;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    color: #f1e8dc;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #c9a77d;
+    color: #241719;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+
+    padding: 150px 10%;
+
+    background: #302022;
+}
+
+.intro-number {
+    font-family: 'Anton';
+    font-size: 80px;
+    opacity: 0.15;
+    color: #c9a77d;
+}
+
+.intro-text {
+    max-width: 800px;
+}
+
+.section-label,
+.section-heading span,
+.band-content .section-label,
+.music-header span,
+.case-text > span,
+.today-content > span,
+.final-title > span {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    opacity: 0.7;
+    color: #c9a77d;
+}
+
+.intro h2 {
+    font-family: 'Anton';
+    font-size: clamp(50px, 7vw, 100px);
+    line-height: 0.9;
+    margin: 20px 0 40px;
+}
+
+.intro p {
+    color: #cdbfb2;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+
+/* ================= HISTORY ================= */
+
+.history {
+    padding: 150px 8%;
+    background: #241719;
+}
+
+.section-heading {
+    margin-bottom: 70px;
+}
+
+.section-heading h2 {
+    font-family: 'Anton';
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.85;
+    margin-top: 15px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.history-image {
+    position: relative;
+}
+
+.history-image img {
+    height: 650px;
+    filter: sepia(15%);
+    transition: 0.6s;
+}
+
+.history-image:hover img {
+    filter: sepia(0%);
+    transform: scale(1.02);
+}
+
+.history-image span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    background: #241719;
+    color: #d4b58e;
+
+    padding: 10px 15px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.history-text h3 {
+    font-family: 'Anton';
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.history-text p {
+    color: #cdbfb2;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    border-left: 1px solid #795b50;
+    margin-top: 50px;
+}
+
+.timeline div {
+    padding: 15px 25px;
+    border-bottom: 1px solid #4a3030;
+}
+
+.timeline strong {
+    display: block;
+    font-size: 25px;
+    color: #d4b58e;
+}
+
+.timeline span {
+    color: #a89688;
+    font-size: 13px;
+}
+
+
+/* ================= BAND SECTIONS ================= */
+
+.band-section {
+    height: 100vh;
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+.band-background {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 1s;
+}
+
+.band-section:hover .band-background {
+    transform: scale(1.04);
+}
+
+.viejas .band-background {
+    background-image:
+        linear-gradient(
+            rgba(47, 24, 25, 0.25),
+            rgba(27, 12, 14, 0.9)
+        ),
+        url("img/viejas-fondo.jpg");
+}
+
+.intoxicados .band-background {
+    background-image:
+        linear-gradient(
+            rgba(35, 20, 19, 0.2),
+            rgba(25, 11, 13, 0.92)
+        ),
+        url("img/intoxicados-fondo.jpg");
+}
+
+.band-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 8%;
+}
+
+.band-content h2 {
+    font-family: 'Anton';
+    font-size: clamp(90px, 16vw, 240px);
+    line-height: 0.72;
+    margin: 25px 0 40px;
+}
+
+.band-content h2 span {
+    color: transparent;
+    -webkit-text-stroke: 2px #e9dccd;
+}
+
+.band-description {
+    max-width: 500px;
+    color: #d2c0b0;
+    font-size: 18px;
+}
+
+
+/* ================= BAND INFO ================= */
+
+.band-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    padding: 140px 10%;
+
+    background: #3a2525;
+}
+
+.band-title h2,
+.intoxicados-heading h2 {
+    font-family: 'Anton';
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 0.85;
+    margin-top: 20px;
+}
+
+.band-info-text {
+    padding-top: 20px;
+}
+
+.band-info-text p,
+.intoxicados-columns p {
+    color: #d0c0b3;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+
+/* ================= DISCOGRAPHY ================= */
+
+.discography {
+    padding: 140px 8%;
+    background: #211719;
+}
+
+.discography.dark {
+    background: #291a1d;
+}
+
+.albums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.discography.dark .albums {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.album {
+    background: #382326;
+    overflow: hidden;
+
+    border: 1px solid rgba(201, 167, 125, 0.08);
+
+    transition: 0.4s;
+}
+
+.album:hover {
+    transform: translateY(-10px);
+    border-color: rgba(201, 167, 125, 0.3);
+}
+
+.album img {
+    aspect-ratio: 1;
+    transition: 0.5s;
+}
+
+.album:hover img {
+    transform: scale(1.06);
+}
+
+.album div {
+    padding: 25px;
+}
+
+.album span {
+    color: #c9a77d;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.album h3 {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+
+/* ================= PHOTO SECTIONS ================= */
+
+.photo-section {
+    padding: 20px;
+    background: #1c1214;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photo-grid img {
+    height: 550px;
+    transition: 0.5s;
+}
+
+.photo-grid img:hover {
+    transform: scale(0.98);
+    filter: brightness(1.12) sepia(10%);
+}
+
+.photo-grid.big {
+    grid-template-columns: 1fr 1fr;
+}
+
+.photo-grid.big img {
+    height: 700px;
+}
+
+.dark-gallery {
+    background: #201416;
+}
+
+
+/* ================= INTOXICADOS INFO ================= */
+
+.intoxicados-info {
+    padding: 150px 10%;
+    background: #2d1d20;
+}
+
+.intoxicados-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    margin-top: 80px;
+}
+
+
+/* ================= FEATURE ================= */
+
+.intoxicados-feature {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+
+    min-height: 700px;
+
+    background: #241719;
+}
+
+.feature-image img {
+    height: 100%;
+    min-height: 700px;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 10%;
+}
+
+.feature-text > span {
+    letter-spacing: 4px;
+    font-size: 12px;
+    opacity: 0.7;
+    color: #c9a77d;
+}
+
+.feature-text h2 {
+    font-family: 'Anton';
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 0.85;
+    margin: 30px 0;
+}
+
+.feature-text p {
+    color: #cdbfb2;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* ================= MUSIC ================= */
+
+.music {
+    padding: 150px 8%;
+    background: #351f23;
+}
+
+.music-header h2 {
+    font-family: 'Anton';
+    font-size: clamp(70px, 10vw, 150px);
+    margin: 20px 0;
+}
+
+.music-header p {
+    color: #cdbfb2;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.spotify {
+    margin-top: 70px;
+    padding: 25px;
+    background: #241719;
+    border: 1px solid rgba(201, 167, 125, 0.15);
+}
+
+.spotify-title {
+    padding: 10px 0 25px;
+}
+
+.spotify-title span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #c9a77d;
+}
+
+.spotify-title h3 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+
+/* ================= SONGS ================= */
+
+.songs {
+    padding: 140px 10%;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 100px;
+
+    background: #211719;
+}
+
+.songs h2 {
+    font-family: 'Anton';
+    font-size: 90px;
+    line-height: 0.9;
+    margin-top: 20px;
+}
+
+.song-list > div {
+    display: grid;
+    grid-template-columns: 50px 1fr 150px;
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #493033;
+}
+
+.song-list span {
+    color: #c9a77d;
+}
+
+.song-list p {
+    font-size: 18px;
+}
+
+.song-list small {
+    color: #a89688;
+}
+
+
+/* ================= CRISTIAN ================= */
+
+.case {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #3a2525;
+}
+
+.case-image img {
+    height: 100%;
+    min-height: 800px;
+}
+
+.case-text {
+    padding: 12%;
+}
+
+.case-text h2 {
+    font-family: 'Anton';
+    font-size: clamp(65px, 8vw, 120px);
+    line-height: 0.85;
+    margin: 25px 0 50px;
+}
+
+.case-text p {
+    color: #d0c0b3;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.warning {
+    margin-top: 40px;
+    padding: 20px;
+
+    border: 1px solid #72554d;
+
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    color: #b09b8c;
+}
+
+
+/* ================= TODAY ================= */
+
+.today {
+    min-height: 800px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(39, 18, 21, 0.75),
+            rgba(25, 11, 13, 0.92)
+        ),
+        url("img/pity5.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 10%;
+}
+
+.today-content {
+    max-width: 800px;
+}
+
+.today h2 {
+    font-family: 'Anton';
+    font-size: clamp(70px, 10vw, 150px);
+    line-height: 0.8;
+    margin: 30px 0 50px;
+}
+
+.today p {
+    color: #cdbfb2;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* ================= FINAL GALLERY ================= */
+
+.final-gallery {
+    padding: 140px 5%;
+    background: #302022;
+}
+
+.final-title {
+    margin-bottom: 70px;
+}
+
+.final-title h2 {
+    font-family: 'Anton';
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.85;
+    margin-top: 20px;
+}
+
+.final-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.final-grid img {
+    height: 500px;
+    transition: 0.5s;
+}
+
+.final-grid img:hover {
+    transform: scale(0.97);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 100px 8% 50px;
+
+    background: #160f11;
+
+    border-top: 1px solid #493033;
+}
+
+.footer-logo {
+    font-family: 'Anton';
+    font-size: 100px;
+    color: #f1e8dc;
+}
+
+footer p {
+    color: #a89688;
+    margin: 20px 0;
+}
+
+footer small {
+    color: #6e5b52;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero-content {
+        margin-left: 6%;
+    }
+
+    .intro,
+    .history-grid,
+    .band-info,
+    .intoxicados-columns,
+    .intoxicados-feature,
+    .songs,
+    .case {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        padding: 100px 8%;
+    }
+
+    .history,
+    .band-info,
+    .intoxicados-info,
+    .music,
+    .songs,
+    .final-gallery {
+        padding: 100px 7%;
+    }
+
+    .history-image img,
+    .photo-grid img,
+    .photo-grid.big img {
+        height: 450px;
+    }
+
+    .albums,
+    .discography.dark .albums {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-grid,
+    .photo-grid.big,
+    .final-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .case-image img {
+        min-height: 500px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 85px;
+    }
+
+    .band-content h2 {
+        font-size: 90px;
+    }
+
+    .albums,
+    .photo-grid,
+    .photo-grid.big,
+    .final-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .final-grid img {
+        height: 400px;
+    }
+
+    .song-list > div {
+        grid-template-columns: 35px 1fr;
+    }
+
+    .song-list small {
+        grid-column: 2;
+    }
+
+    .footer-logo {
+        font-size: 70px;
+    }
+
+}
